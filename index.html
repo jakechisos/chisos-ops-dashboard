@@ -58,6 +58,7 @@ a:hover { text-decoration: underline; }
 .task-card.needs-review { border-left: 3px solid #d29922; }
 .task-card.overdue { border-left: 3px solid #f85149; }
 .task-card.blocked-card { border-left: 3px solid #f85149; }
+.task-card.design-card { border-left: 3px solid #d2a8ff; }
 .task-card .task-name { font-size: 14px; font-weight: 500; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px; }
 .task-card .task-name a { color: #e6edf3; }
 .task-card .task-name a:hover { color: #58a6ff; }
@@ -69,6 +70,7 @@ a:hover { text-decoration: underline; }
 .status-in-progress { background: #58a6ff; }
 .status-planning { background: #bc8cff; }
 .status-prototyping { background: #a371f7; }
+.status-pattern-design { background: #d2a8ff; }
 .status-needs-review { background: #d29922; }
 .status-not-started { background: #484f58; }
 .status-blocked { background: #f85149; }
@@ -83,6 +85,8 @@ a:hover { text-decoration: underline; }
 .backlog-chip .chip-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #484f58; margin-right: 6px; }
 .backlog-chip.dimmed { opacity: 0.15; }
 .backlog-chip .overdue-indicator { color: #f85149; margin-left: 4px; font-weight: 600; }
+
+.empty-state { color: #484f58; font-size: 13px; font-style: italic; padding: 8px 0; }
 
 .footer { text-align: center; color: #484f58; font-size: 12px; margin-top: 32px; padding-top: 16px; border-top: 1px solid #21262d; }
 
@@ -108,7 +112,7 @@ a:hover { text-decoration: underline; }
 <div class="header">
   <h1>Chisos Operations Dashboard</h1>
   <div class="subtitle">Jake Lenderman, General Manager</div>
-  <div class="source">Monday, March 30, 2026 &nbsp;|&nbsp; Source: ClickUp</div>
+  <div class="source">Monday, April 6, 2026 &nbsp;|&nbsp; Source: ClickUp</div>
 </div>
 
 <div class="quick-links">
@@ -120,19 +124,19 @@ a:hover { text-decoration: underline; }
 
 <div class="stats-bar">
   <div class="stat-panel stat-total" data-filter="all" onclick="toggleFilter('all')">
-    <div class="stat-number">36</div>
+    <div class="stat-number">47</div>
     <div class="stat-label">Total Open</div>
   </div>
   <div class="stat-panel stat-active" data-filter="active" onclick="toggleFilter('active')">
-    <div class="stat-number">12</div>
+    <div class="stat-number">16</div>
     <div class="stat-label">Active Right Now</div>
   </div>
   <div class="stat-panel stat-overdue" data-filter="overdue" onclick="toggleFilter('overdue')">
-    <div class="stat-number">8</div>
+    <div class="stat-number">2</div>
     <div class="stat-label">Overdue</div>
   </div>
   <div class="stat-panel stat-review" data-filter="review" onclick="toggleFilter('review')">
-    <div class="stat-number">2</div>
+    <div class="stat-number">0</div>
     <div class="stat-label">Needs Review</div>
   </div>
 </div>
@@ -141,6 +145,7 @@ a:hover { text-decoration: underline; }
   <div class="legend-item"><div class="legend-dot status-in-progress"></div>In Progress</div>
   <div class="legend-item"><div class="legend-dot status-planning"></div>Planning</div>
   <div class="legend-item"><div class="legend-dot" style="background:#a371f7"></div>Prototyping</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#d2a8ff"></div>Pattern + Design</div>
   <div class="legend-item"><div class="legend-dot status-needs-review"></div>Needs Review</div>
   <div class="legend-item"><div class="legend-dot status-blocked"></div>Blocked</div>
   <div class="legend-item"><div class="legend-dot status-not-started"></div>Not Started</div>
@@ -155,58 +160,20 @@ a:hover { text-decoration: underline; }
 
     <div class="section-label">Active</div>
 
-    <div class="task-card overdue" data-category="active overdue">
-      <div class="task-name">
-        <div class="status-dot status-in-progress"></div>
-        <a href="https://app.clickup.com/t/868hr6bj3" target="_blank">Create labels for tshirt bins</a>
-      </div>
-      <div class="task-meta">
-        <span>Jake Lenderman</span>
-        <span>In Progress</span>
-        <span class="overdue-date">Due: Mar 23 (overdue)</span>
-      </div>
-    </div>
-
-    <div class="task-card blocked-card" data-category="active">
-      <div class="task-name">
-        <div class="status-dot status-blocked"></div>
-        <a href="https://app.clickup.com/t/868hn74qj" target="_blank">Leather Roll &mdash; Ship to MX</a>
-      </div>
-      <div class="task-meta">
-        <span>Kris Mohn, Jake Lenderman</span>
-        <span>Blocked</span>
-        <span>Due: Mar 30</span>
-      </div>
-    </div>
-
     <div class="task-card active" data-category="active">
       <div class="task-name">
-        <div class="status-dot status-planning"></div>
-        <a href="https://app.clickup.com/t/868hhrh25" target="_blank">Clean up storage racks to allow things to be put all the way through</a>
+        <div class="status-dot status-in-progress"></div>
+        <a href="https://app.clickup.com/t/868hhezab" target="_blank">Find alternative to SLAB</a>
       </div>
       <div class="task-meta">
-        <span>Kris Mohn</span>
-        <span>Planning</span>
-        <span>Due: Apr 30</span>
-      </div>
-    </div>
-
-    <div class="task-card needs-review" data-category="active review">
-      <div class="task-name">
-        <div class="status-dot status-needs-review"></div>
-        <a href="https://app.clickup.com/t/868hf3ej0" target="_blank">SOP on receiving stock? Is there one?</a>
-      </div>
-      <div class="task-meta">
-        <span>Kris Mohn</span>
-        <span>Needs Review</span>
+        <span>Marli Roccanova</span>
+        <span>In Progress</span>
       </div>
     </div>
 
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hftq5b" target="_blank">WHS Weekly Cleanliness Checklist</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hew1j7" target="_blank">Workstation Setup</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hkk3gm" target="_blank">New Claim #29211-X</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hkk3gk" target="_blank">New Claim #29167</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hkjvg4" target="_blank">File Claims for Lost/Damaged Packages</a></div>
@@ -220,58 +187,12 @@ a:hover { text-decoration: underline; }
     <div class="dept-owner">Gannon Hutto</div>
 
     <div class="section-label">Active</div>
-
-    <div class="task-card overdue" data-category="active overdue">
-      <div class="task-name">
-        <div class="status-dot status-in-progress"></div>
-        <a href="https://app.clickup.com/t/868hjv230" target="_blank">Build Fit Defense System</a>
-      </div>
-      <div class="task-meta">
-        <span>Gannon Hutto</span>
-        <span>In Progress</span>
-        <span class="overdue-date">Due: Mar 13 (overdue)</span>
-      </div>
-    </div>
-
-    <div class="task-card overdue needs-review" data-category="active review overdue">
-      <div class="task-name">
-        <div class="status-dot status-needs-review"></div>
-        <a href="https://app.clickup.com/t/868hux6hw" target="_blank">Write GEO Playbook for Reddit</a>
-      </div>
-      <div class="task-meta">
-        <span>Gannon Hutto</span>
-        <span>Needs Review</span>
-        <span class="overdue-date">Due: Mar 13 (overdue)</span>
-      </div>
-    </div>
-
-    <div class="task-card overdue" data-category="active overdue">
-      <div class="task-name">
-        <div class="status-dot status-planning"></div>
-        <a href="https://app.clickup.com/t/868hjq58q" target="_blank">Refund Analysis &mdash; Jake and Gannon</a>
-      </div>
-      <div class="task-meta">
-        <span>Gannon Hutto</span>
-        <span>Planning</span>
-        <span class="overdue-date">Due: Feb 27 (overdue)</span>
-      </div>
-    </div>
-
-    <div class="task-card active" data-category="active">
-      <div class="task-name">
-        <div class="status-dot status-in-progress"></div>
-        <a href="https://app.clickup.com/t/868hkpehm" target="_blank">Publish &ldquo;Cowboy Boot Brands Compared&rdquo; Buyer&rsquo;s Guide for SEO</a>
-      </div>
-      <div class="task-meta">
-        <span>Gannon Hutto</span>
-        <span>In Progress</span>
-      </div>
-    </div>
+    <div class="empty-state">No active tasks</div>
 
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/29pj6yk" target="_blank">Archive completed orders in Shopify</a></div>
+        <div class="backlog-chip" data-category="backlog overdue"><span class="chip-dot"></span><a href="https://app.clickup.com/t/29pj6yk" target="_blank">Archive completed orders in Shopify</a><span class="overdue-indicator"> !</span></div>
       </div>
     </div>
   </div>
@@ -282,51 +203,21 @@ a:hover { text-decoration: underline; }
     <div class="dept-owner">Juan Morales + Jake Lenderman</div>
 
     <div class="section-label">Active</div>
-
-    <div class="task-card overdue" data-category="active overdue">
-      <div class="task-name">
-        <div class="status-dot status-in-progress"></div>
-        <a href="https://app.clickup.com/t/868hnc51u" target="_blank">Fixing Firepit for better airflow</a>
-      </div>
-      <div class="task-meta">
-        <span>Jake Lenderman</span>
-        <span>In Progress</span>
-        <span class="overdue-date">Due: Mar 24 (overdue)</span>
-      </div>
-    </div>
-
-    <div class="task-card overdue" data-category="active overdue">
-      <div class="task-name">
-        <div class="status-dot status-planning"></div>
-        <a href="https://app.clickup.com/t/868hfv0q5" target="_blank">HQ &mdash; Office/Study Reno</a>
-      </div>
-      <div class="task-meta">
-        <span>Jake Lenderman</span>
-        <span>Planning</span>
-        <span class="overdue-date">Due: Mar 19 (overdue)</span>
-      </div>
-    </div>
+    <div class="empty-state">No active tasks</div>
 
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
-        <div class="backlog-chip" data-category="backlog overdue"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8686g4hfu" target="_blank">Count cash-on-hand (Weekly)</a><span class="overdue-indicator"> !</span></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyza7k" target="_blank">Install new light switch face plate</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyza5m" target="_blank">Install new ceiling air register</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyza0u" target="_blank">Pick up tools and misc</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyz9w3" target="_blank">Cover hole in wall and paint green</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyz9hy" target="_blank">Reattach lights in nook and add new bulbs</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyz9dv" target="_blank">Return two ceiling lights to lampsplus</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyz98t" target="_blank">Install pulls on cabinets</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hyz969" target="_blank">Find second solid wood door</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hq83r6" target="_blank">HQ Minor Tasks</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hnz2vw" target="_blank">System for keeping back of house organized</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hj91rt" target="_blank">New Lighting for middle Room</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hf43bq" target="_blank">Daily/Weekly/Monthly Cleanliness Checklist</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hf42uv" target="_blank">Order more business cards</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2ad9yu7" target="_blank">Change air filters</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/3t4tk9d" target="_blank">Clean bathroom fan</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/29b4ueb" target="_blank">Spray for bugs</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttycb" target="_blank">ELECTRICAL</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttxeg" target="_blank">BRANDING</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttx1k" target="_blank">FITTING</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttv1h" target="_blank">DECOR</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttckm" target="_blank">DISPLAY</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868735hph" target="_blank">Renew Import/Export License</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/862jcu6y7" target="_blank">Flags &mdash; Get quotes for logos</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/47efr4j" target="_blank">Verify Kutoku Affiliate Sales</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2mf4zjp" target="_blank">Reach out to Cuero boots</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2pej5bv" target="_blank">Review outstanding SOP queue items</a></div>
       </div>
     </div>
   </div>
@@ -339,6 +230,63 @@ a:hover { text-decoration: underline; }
     <div class="section-label">Active</div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px;">
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-prototyping"></div>
+          <a href="https://app.clickup.com/t/8686vygbn" target="_blank">[BOOT] Ladies' Bootie No. 8</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Prototyping</span>
+          <span style="color: #f0883e; font-weight: 600;">High Priority</span>
+        </div>
+      </div>
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-prototyping"></div>
+          <a href="https://app.clickup.com/t/868hgcuaq" target="_blank">Driskill Boots</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Prototyping</span>
+        </div>
+      </div>
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-prototyping"></div>
+          <a href="https://app.clickup.com/t/8687ymz6j" target="_blank">[BOOT] New Whiskey Cowhide Leather</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Prototyping</span>
+        </div>
+      </div>
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-prototyping"></div>
+          <a href="https://app.clickup.com/t/8686vygbw" target="_blank">Cowboy Hats</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Prototyping</span>
+        </div>
+      </div>
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-prototyping"></div>
+          <a href="https://app.clickup.com/t/8687ymqux" target="_blank">Apparel &mdash; Jeans</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Prototyping</span>
+        </div>
+      </div>
+
       <div class="task-card active" data-category="active">
         <div class="task-name">
           <div class="status-dot status-prototyping"></div>
@@ -360,12 +308,117 @@ a:hover { text-decoration: underline; }
           <span>Prototyping</span>
         </div>
       </div>
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-prototyping"></div>
+          <a href="https://app.clickup.com/t/270rv4r" target="_blank">Packaging for Insoles</a>
+        </div>
+        <div class="task-meta">
+          <span>Will Roman</span>
+          <span>Prototyping</span>
+        </div>
+      </div>
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-planning"></div>
+          <a href="https://app.clickup.com/t/868fb6nf7" target="_blank">Slipper, ADIDAS Slide</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Planning</span>
+        </div>
+      </div>
+
+      <div class="task-card active" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-planning"></div>
+          <a href="https://app.clickup.com/t/8687ymp61" target="_blank">Slipper, Goodyear Welt</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Planning</span>
+        </div>
+      </div>
+
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-pattern-design"></div>
+          <a href="https://app.clickup.com/t/868cdxpym" target="_blank">Bags for boots &mdash; make in China</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Pattern + Design</span>
+        </div>
+      </div>
+
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-pattern-design"></div>
+          <a href="https://app.clickup.com/t/868cdxp2u" target="_blank">Packaging for Belts</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Pattern + Design</span>
+        </div>
+      </div>
+
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-pattern-design"></div>
+          <a href="https://app.clickup.com/t/868aw5dh1" target="_blank">Packaging for Mini Boot Belts</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Pattern + Design</span>
+        </div>
+      </div>
+
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-pattern-design"></div>
+          <a href="https://app.clickup.com/t/8687ymvc2" target="_blank">[BOOT] Work/Tactical Boot</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Pattern + Design</span>
+        </div>
+      </div>
+
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name">
+          <div class="status-dot status-pattern-design"></div>
+          <a href="https://app.clickup.com/t/2p0gfry" target="_blank">Finalize updated label design and placement</a>
+        </div>
+        <div class="task-meta">
+          <span>Unassigned</span>
+          <span>Pattern + Design</span>
+        </div>
+      </div>
+
     </div>
 
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
         <div class="backlog-chip" data-category="backlog overdue"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hfk1ya" target="_blank">Zippers &mdash; Stronger, Custom Pulls</a><span class="overdue-indicator"> !</span></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hgcz7a" target="_blank">Rose Anvil x Chisos boot</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687zdx2q" target="_blank">Fragrance</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymz9d" target="_blank">[BOOT] New Goat Leather</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymy5b" target="_blank">Apparel &mdash; Denim Button Shirts</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymuh9" target="_blank">Belt, Work Style</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymu0y" target="_blank">Belts &mdash; Change buckle material</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymqwk" target="_blank">Apparel &mdash; Socks</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymqnu" target="_blank">Apparel &mdash; Pearl Snaps</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymq3z" target="_blank">Slipper, Cemented</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/863gky6w1" target="_blank">Pocket Tee for HQ only</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/863fvcdhq" target="_blank">Belt buckles and challenge coins</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/3x2kg73" target="_blank">Order!</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/3x2kg6q" target="_blank">Design belly wrap verbiage</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/3x2kg4a" target="_blank">Identify printer for belly wrap</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2h86zpa" target="_blank">Contact Kevin Kelly at Well Made Workshop</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2p0gf2z" target="_blank">Rubber Sole Saver</a></div>
       </div>
     </div>
   </div>
@@ -373,7 +426,7 @@ a:hover { text-decoration: underline; }
 </div>
 
 <div class="footer">
-  Last pulled from ClickUp: Monday, March 30, 2026 &nbsp;|&nbsp; 36 tasks across 4 spaces &nbsp;|&nbsp; Auto-generated dashboard
+  Last pulled from ClickUp: Monday, April 6, 2026 &nbsp;|&nbsp; 47 tasks across 3 lists &nbsp;|&nbsp; Auto-generated dashboard
 </div>
 
 <script>
