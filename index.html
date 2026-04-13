@@ -85,6 +85,7 @@ a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
+
 <div id="login-gate">
 <div id="login-box">
 <h2>Chisos Operations</h2>
@@ -94,21 +95,24 @@ a:hover { text-decoration: underline; }
 <div id="login-error">Incorrect password</div>
 </div>
 </div>
+
 <div id="dashboard-content">
 <div class="header">
   <h1>Chisos Operations Dashboard</h1>
   <div class="subtitle">Jake Lenderman, General Manager</div>
-  <div class="source">Friday, April 10, 2026 &nbsp;|&nbsp; Source: ClickUp</div>
+  <div class="source">Monday, April 13, 2026 &nbsp;|&nbsp; Source: ClickUp</div>
 </div>
+
 <div class="quick-links">
   <a href="https://docs.google.com/document/d/1noy4dk2CwJSjATfWDxNZ7Xq-LiEMEZuW8GMXw_cewGk/edit?tab=t.0" target="_blank">Meeting Notes</a>
   <a href="https://app.clickup.com/14146472/v/l/350955711" target="_blank">Operations</a>
   <a href="https://app.clickup.com/14146472/v/l/350955713" target="_blank">Facilities</a>
   <a href="https://app.clickup.com/14146472/v/l/901103122600" target="_blank">Product</a>
 </div>
+
 <div class="stats-bar">
   <div class="stat-panel stat-total" data-filter="all" onclick="toggleFilter('all')">
-    <div class="stat-number">48</div>
+    <div class="stat-number">35</div>
     <div class="stat-label">Total Open</div>
   </div>
   <div class="stat-panel stat-active" data-filter="active" onclick="toggleFilter('active')">
@@ -124,6 +128,7 @@ a:hover { text-decoration: underline; }
     <div class="stat-label">Needs Review</div>
   </div>
 </div>
+
 <div class="legend">
   <div class="legend-item"><div class="legend-dot status-in-progress"></div>In Progress</div>
   <div class="legend-item"><div class="legend-dot status-planning"></div>Planning</div>
@@ -133,24 +138,33 @@ a:hover { text-decoration: underline; }
   <div class="legend-item"><div class="legend-dot status-blocked"></div>Blocked</div>
   <div class="legend-item"><div class="legend-dot status-not-started"></div>Not Started</div>
 </div>
+
 <div class="dept-grid">
+
+  <!-- WAREHOUSE / FULFILLMENT -->
   <div class="dept-section">
     <div class="dept-title">Warehouse / Fulfillment</div>
     <div class="dept-owner">Kris Mohn + Jake Lenderman</div>
     <div class="section-label">Active</div>
     <div class="task-card active" data-category="active">
-      <div class="task-name"><div class="status-dot status-in-progress"></div><a href="https://app.clickup.com/t/868hhezab" target="_blank">Find alternative to SLAB</a></div>
-      <div class="task-meta"><span>Marli Roccanova</span><span>In Progress</span></div>
+      <div class="task-name">
+        <div class="status-dot status-in-progress"></div>
+        <a href="https://app.clickup.com/t/868hhezab" target="_blank">Find alternative to SLAB</a>
+      </div>
+      <div class="task-meta">
+        <span>Marli Roccanova</span>
+        <span>In Progress</span>
+      </div>
     </div>
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hkk3gm" target="_blank">New Claim #29211-X</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hkk3gk" target="_blank">New Claim #29167</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hkjvg4" target="_blank">File Claims for Lost/Damaged Packages</a></div>
       </div>
     </div>
   </div>
+
+  <!-- CUSTOMER EXPERIENCE -->
   <div class="dept-section">
     <div class="dept-title">Customer Experience</div>
     <div class="dept-owner">Gannon Hutto</div>
@@ -159,10 +173,12 @@ a:hover { text-decoration: underline; }
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
-        <div class="backlog-chip" data-category="backlog overdue"><span class="chip-dot" style="background:#f85149"></span><a href="https://app.clickup.com/t/29pj6yk" target="_blank">Archive completed orders in Shopify</a><span class="overdue-indicator"> !</span></div>
+        <div class="backlog-chip" data-category="backlog overdue"><span class="chip-dot" style="background:#f85149"></span><a href="https://app.clickup.com/t/29pj6yk" target="_blank">Archive completed orders in Shopify</a><span class="overdue-indicator"> ! due Mar 31</span></div>
       </div>
     </div>
   </div>
+
+  <!-- RETAIL / HEADQUARTERS -->
   <div class="dept-section">
     <div class="dept-title">Retail / Headquarters</div>
     <div class="dept-owner">Juan Morales + Jake Lenderman</div>
@@ -171,69 +187,109 @@ a:hover { text-decoration: underline; }
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttycb" target="_blank">ELECTRICAL</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttxeg" target="_blank">BRANDING</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttx1k" target="_blank">FITTING</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttv1h" target="_blank">DECOR</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868fttckm" target="_blank">DISPLAY</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868735hph" target="_blank">Renew Import/Export License &mdash; due Nov 2</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/862jcu6y7" target="_blank">Flags &mdash; Get quotes for logos</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/47efr4j" target="_blank">Verify Kutoku Affiliate Sales &mdash; due May 1</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2mf4zjp" target="_blank">Reach out to Cuero boots</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2pej5bv" target="_blank">Review outstanding SOP queue items</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/862jcu6y7" target="_blank">Flags &mdash; Get quotes for logos</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868735hph" target="_blank">Renew Import/Export License &mdash; due Nov 2</a></div>
       </div>
     </div>
   </div>
+
+  <!-- PRODUCT / CROSS-FUNCTIONAL -->
   <div class="dept-section full-width">
     <div class="dept-title">Product / Cross-functional</div>
     <div class="dept-owner">Cross-department</div>
     <div class="section-label">Active</div>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px;">
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8686vygbn" target="_blank">[BOOT] Ladies Bootie No. 8</a></div><div class="task-meta"><span>Unassigned</span><span>Prototyping</span><span style="color: #f0883e; font-weight: 600;">High Priority</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/868hgcuaq" target="_blank">Driskill Boots</a></div><div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8687ymz6j" target="_blank">[BOOT] New Whiskey Cowhide Leather</a></div><div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8686vygbw" target="_blank">Cowboy Hats</a></div><div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8687ymqux" target="_blank">Apparel - Jeans</a></div><div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/2cxb5m7" target="_blank">Mini Boot Belt</a></div><div class="task-meta"><span>Jake Lenderman</span><span>Prototyping</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/2p0gftq" target="_blank">Replacement cardboard inserts for shafts</a></div><div class="task-meta"><span>Gannon Hutto</span><span>Prototyping</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/270rv4r" target="_blank">Packaging for Insoles</a></div><div class="task-meta"><span>Will Roman</span><span>Prototyping</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-planning"></div><a href="https://app.clickup.com/t/868fb6nf7" target="_blank">Slipper, ADIDAS Slide</a></div><div class="task-meta"><span>Unassigned</span><span>Planning</span></div></div>
-      <div class="task-card active" data-category="active"><div class="task-name"><div class="status-dot status-planning"></div><a href="https://app.clickup.com/t/8687ymp61" target="_blank">Slipper, Goodyear Welt</a></div><div class="task-meta"><span>Unassigned</span><span>Planning</span></div></div>
-      <div class="task-card design-card" data-category="active"><div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/868cdxpym" target="_blank">Bags for boots - make in China</a></div><div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div></div>
-      <div class="task-card design-card" data-category="active"><div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/868cdxp2u" target="_blank">Packaging for Belts</a></div><div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div></div>
-      <div class="task-card design-card" data-category="active"><div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/868aw5dh1" target="_blank">Packaging for Mini Boot Belts</a></div><div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div></div>
-      <div class="task-card design-card" data-category="active"><div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/8687ymvc2" target="_blank">[BOOT] Work/Tactical Boot</a></div><div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div></div>
-      <div class="task-card design-card" data-category="active"><div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/2p0gfry" target="_blank">Finalize updated label design and placement on new box</a></div><div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div></div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8686vygbn" target="_blank">[BOOT] Ladies' Bootie No. 8</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Prototyping</span><span style="color: #f0883e; font-weight: 600;">High Priority</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/868hgcuaq" target="_blank">Driskill Boots</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8687ymz6j" target="_blank">[BOOT] New Whiskey Cowhide Leather</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8686vygbw" target="_blank">Cowboy Hats</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/8687ymqux" target="_blank">Apparel &mdash; Jeans</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Prototyping</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/2cxb5m7" target="_blank">Mini Boot Belt</a></div>
+        <div class="task-meta"><span>Jake Lenderman</span><span>Prototyping</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/2p0gftq" target="_blank">Replacement cardboard inserts for shafts</a></div>
+        <div class="task-meta"><span>Gannon Hutto</span><span>Prototyping</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-prototyping"></div><a href="https://app.clickup.com/t/270rv4r" target="_blank">Packaging for Insoles (regular and thin)</a></div>
+        <div class="task-meta"><span>Will Roman</span><span>Prototyping</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-planning"></div><a href="https://app.clickup.com/t/868fb6nf7" target="_blank">Slipper, ADIDAS Slide</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Planning</span></div>
+      </div>
+      <div class="task-card active" data-category="active">
+        <div class="task-name"><div class="status-dot status-planning"></div><a href="https://app.clickup.com/t/8687ymp61" target="_blank">Slipper, Goodyear Welt</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Planning</span></div>
+      </div>
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/868cdxpym" target="_blank">Bags for boots &mdash; make in China</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div>
+      </div>
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/868cdxp2u" target="_blank">Packaging for Belts</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div>
+      </div>
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/868aw5dh1" target="_blank">Packaging for Mini Boot Belts</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div>
+      </div>
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/8687ymvc2" target="_blank">[BOOT] Work/Tactical Boot</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div>
+      </div>
+      <div class="task-card design-card" data-category="active">
+        <div class="task-name"><div class="status-dot status-pattern-design"></div><a href="https://app.clickup.com/t/2p0gfry" target="_blank">Finalize updated label design &amp; placement on new box</a></div>
+        <div class="task-meta"><span>Unassigned</span><span>Pattern + Design</span></div>
+      </div>
     </div>
     <div class="backlog-section">
       <div class="section-label">Backlog</div>
       <div class="backlog-chips">
-        <div class="backlog-chip" data-category="backlog overdue"><span class="chip-dot" style="background:#f85149"></span><a href="https://app.clickup.com/t/868hfk1ya" target="_blank">Zippers - Stronger, Custom Pulls</a><span class="overdue-indicator"> ! due Feb 24</span></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hgcz7a" target="_blank">Rose Anvil x Chisos boot - blood core leather</a></div>
+        <div class="backlog-chip" data-category="backlog overdue"><span class="chip-dot" style="background:#f85149"></span><a href="https://app.clickup.com/t/868hfk1ya" target="_blank">Zippers &mdash; Stronger, Custom Pulls</a><span class="overdue-indicator"> ! due Feb 23</span></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/868hgcz7a" target="_blank">Rose Anvil x Chisos boot &mdash; blood core leather</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687zdx2q" target="_blank">Fragrance</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymz9d" target="_blank">[BOOT] New Goat Leather</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymy5b" target="_blank">Apparel - Denim Button Shirts</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymy5b" target="_blank">Apparel &mdash; Denim Button Shirts</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymuh9" target="_blank">Belt, Work Style</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymu0y" target="_blank">Belts - Change buckle material to steel/bronze/copper</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymtkx" target="_blank">Belts - New locking mechanism for buckle</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymqwk" target="_blank">Apparel - Socks</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymqnu" target="_blank">Apparel - Pearl Snaps</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymu0y" target="_blank">Belts &mdash; Change buckle material to steel/bronze/copper</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymqwk" target="_blank">Apparel &mdash; Socks</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymqnu" target="_blank">Apparel &mdash; Pearl Snaps</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/8687ymq3z" target="_blank">Slipper, Cemented</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/863gky6w1" target="_blank">Pocket Tee for sale at Chisos HQ only</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/863fvcdhq" target="_blank">Belt buckles and challenge coins from Austin guys</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/3x2kg73" target="_blank">Order!</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/3x2kg6q" target="_blank">Design belly wrap verbiage and text</a></div>
-        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/3x2kg4a" target="_blank">Identify printer and get quote (belly wrap)</a></div>
+        <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/863fvcdhq" target="_blank">Belt buckles &amp; challenge coins from Austin guys</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2h86zpa" target="_blank">Contact Kevin Kelly at Well Made Workshop</a></div>
         <div class="backlog-chip" data-category="backlog"><span class="chip-dot"></span><a href="https://app.clickup.com/t/2p0gf2z" target="_blank">Rubber Sole Saver</a></div>
       </div>
     </div>
   </div>
+
 </div>
+
 <div class="footer">
-  Pulled from ClickUp &nbsp;|&nbsp; Friday, April 10, 2026 &nbsp;|&nbsp; Operations (350955711) &middot; Facilities (350955713) &middot; Product (901103122600)
+  Pulled from ClickUp &nbsp;|&nbsp; Monday, April 13, 2026 &nbsp;|&nbsp; Operations (350955711) &middot; Facilities (350955713) &middot; Product (901103122600)
 </div>
+
 </div>
+
 <script>
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);
@@ -265,7 +321,7 @@ function toggleFilter(type) {
   }
   activeFilter = type;
   panels.forEach(p => p.classList.remove('active-filter'));
-  document.querySelector('[data-filter="' + type + '"]').classList.add('active-filter');
+  document.querySelector(`[data-filter="${type}"]`).classList.add('active-filter');
   cards.forEach(card => {
     const cats = card.dataset.category || '';
     if (type === 'active' && cats.includes('active')) { card.classList.remove('dimmed'); }
@@ -280,5 +336,6 @@ function toggleFilter(type) {
   });
 }
 </script>
+
 </body>
 </html>
